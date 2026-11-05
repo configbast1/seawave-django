@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block subtitle %}Зв'яжіться з нами будь-яким зручним способом{% endblock %}
+{% block content %}
+<div class="grid">
+    <div class="card"><div class="icon">📍</div><h3>Адреса</h3><p>м. Одеса, вул. Дерибасівська, 1</p></div>
+    <div class="card"><div class="icon">📞</div><h3>Телефон</h3><p><a href="tel:+380480000000">+38 (048) 000-00-00</a></p></div>
+    <div class="card"><div class="icon">✉️</div><h3>Email</h3><p><a href="mailto:info@seawave.example">info@seawave.example</a></p></div>
+    <div class="card"><div class="icon">🕘</div><h3>Графік роботи</h3><p>Пн–Пт, 9:00–18:00</p></div>
+</div>
+
+<h2>Офіси в різних країнах</h2>
+<div class="grid">
+    <a class="card" href="{% url 'contacts_ukraine' %}"><img src="{% static 'img/odesa.svg' %}" alt="Одеса"><h3>🇺🇦 Україна</h3><p>Головний офіс в Одесі</p></a>
+    <a class="card" href="{% url 'contacts_france' %}"><img src="{% static 'img/paris.svg' %}" alt="Париж"><h3>🇫🇷 Франція</h3><p>Офіс у Парижі</p></a>
+    <a class="card" href="{% url 'contacts_austria' %}"><img src="{% static 'img/vienna.svg' %}" alt="Відень"><h3>🇦🇹 Австрія</h3><p>Офіс у Відні</p></a>
+</div>
+{% endblock %}

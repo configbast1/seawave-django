@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block subtitle %}Схоже, ця сторінка загубилася в морі{% endblock %}
+{% block content %}
+<div class="not-found">
+    <img src="{% static 'img/lost.svg' %}" alt="Кораблик загубився">
+    <h2>Помилка 404</h2>
+    <p>Сторінки <b>{{ request.path }}</b> на нашому сайті немає.</p>
+    <p>Можливо, адресу введено з помилкою або сторінку було видалено.</p>
+    <a class="btn" href="{% url 'home' %}">На головну</a>
+    <a class="btn btn-light" href="{% url 'contacts' %}">Написати нам</a>
+</div>
+{% endblock %}

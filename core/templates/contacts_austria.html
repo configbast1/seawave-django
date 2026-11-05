@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block subtitle %}Офіс компанії у Відні{% endblock %}
+{% block crumbs %}<div class="crumbs"><a href="{% url 'home' %}">Головна</a> › <a href="{% url 'contacts' %}">Контакти</a> › <span>Австрія</span></div>{% endblock %}
+{% block content %}
+<img class="banner" src="{% static 'img/vienna.svg' %}" alt="Австрія">
+<div class="grid">
+    <div class="card"><div class="icon">📍</div><h3>Адреса</h3><p>Відень, Рінгштрассе, 10</p></div>
+    <div class="card"><div class="icon">📞</div><h3>Телефон</h3><p><a href="tel:+4310000000">+43 1 000 00 00</a></p></div>
+    <div class="card"><div class="icon">✉️</div><h3>Email</h3><p><a href="mailto:austria@seawave.example">austria@seawave.example</a></p></div>
+    <div class="card"><div class="icon">🕘</div><h3>Графік роботи</h3><p>Пн–Пт, 8:30–17:00</p></div>
+</div>
+<a class="btn" href="{% url 'contacts' %}">← Усі контакти</a>
+{% endblock %}

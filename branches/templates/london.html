@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block subtitle %}Наш перший офіс за кордоном{% endblock %}
+{% block crumbs %}<div class="crumbs"><a href="{% url 'home' %}">Головна</a> › <a href="{% url 'branches_list' %}">Филиалы</a> › <span>Лондон</span></div>{% endblock %}
+{% block content %}
+<img class="banner" src="{% static 'img/london.svg' %}" alt="Лондон">
+<h2>Про філію</h2>
+<p>Філія в Лондоні відкрилася у 2014 році. Тут працюють менеджери проєктів і консультанти, які спілкуються з британськими клієнтами.</p>
+<div class="stats">
+    <div class="stat"><b>2014</b>рік відкриття</div>
+    <div class="stat"><b>45</b>працівників</div>
+    <div class="stat"><b>150+</b>клієнтів</div>
+</div>
+<a class="btn" href="{% url 'branches_list' %}">← Усі філії</a>
+{% endblock %}

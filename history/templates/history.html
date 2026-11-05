@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block subtitle %}Шлях компанії від заснування до сьогодні{% endblock %}
+{% block content %}
+<p>За 18 років SeaWave Software виросла з маленької команди з трьох друзів до міжнародної компанії. Оберіть, що хочете дізнатися:</p>
+<div class="grid">
+    <a class="card" href="{% url 'history_dates' %}"><div class="icon">📅</div><h3>Перелік дат</h3><p>Головні події компанії рік за роком.</p></a>
+    <a class="card" href="{% url 'history_facts' %}"><div class="icon">💡</div><h3>Значимі факти</h3><p>Цікаві та важливі факти з нашої історії.</p></a>
+</div>
+{% endblock %}

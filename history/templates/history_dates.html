@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block subtitle %}Головні події компанії рік за роком{% endblock %}
+{% block crumbs %}<div class="crumbs"><a href="{% url 'home' %}">Головна</a> › <a href="{% url 'history' %}">Історія</a> › <span>Перелік дат</span></div>{% endblock %}
+{% block content %}
+<ul class="timeline">
+    <li><div class="year">2008</div>Заснування компанії в Одесі</li>
+    <li><div class="year">2011</div>Перші 100 клієнтів</li>
+    <li><div class="year">2014</div>Відкриття філії в Лондоні</li>
+    <li><div class="year">2017</div>Відкриття філії в Парижі</li>
+    <li><div class="year">2020</div>Перехід на віддалену роботу</li>
+    <li><div class="year">2024</div>500 працівників у штаті</li>
+</ul>
+<a class="btn" href="{% url 'history' %}">← Назад до історії</a>
+{% endblock %}

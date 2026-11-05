@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block subtitle %}Ми створюємо програми, якими користуються мільйони людей{% endblock %}
+{% block content %}
+<img class="banner" src="{% static 'img/odesa.svg' %}" alt="Одеса, маяк і море">
+<h2>Ласкаво просимо!</h2>
+<p>SeaWave Software — українська IT-компанія, яка розробляє веб-сервіси, мобільні застосунки та системи для бізнесу. Наш головний офіс знаходиться в Одесі, а філії працюють у Лондоні, Парижі та Відні.</p>
+
+<div class="stats">
+    <div class="stat"><b>18</b>років на ринку</div>
+    <div class="stat"><b>500+</b>працівників</div>
+    <div class="stat"><b>1200</b>проєктів</div>
+    <div class="stat"><b>4</b>офіси</div>
+</div>
+
+<h2>Чим ми займаємося</h2>
+<div class="grid">
+    <div class="card"><div class="icon">💻</div><h3>Веб-розробка</h3><p>Сайти та онлайн-сервіси на Python і Django.</p></div>
+    <div class="card"><div class="icon">📱</div><h3>Мобільні застосунки</h3><p>Застосунки для Android та iOS.</p></div>
+    <div class="card"><div class="icon">☁️</div><h3>Хмарні рішення</h3><p>Перенесення бізнесу в хмару та підтримка серверів.</p></div>
+</div>
+
+<h2>Корисні розділи</h2>
+<div class="grid">
+    <a class="card" href="{% url 'news' %}"><div class="icon">📰</div><h3>Новини</h3><p>Останні події з життя компанії.</p></a>
+    <a class="card" href="{% url 'history' %}"><div class="icon">📜</div><h3>Історія</h3><p>Як ми виросли з трьох людей до 500.</p></a>
+    <a class="card" href="{% url 'branches_list' %}"><div class="icon">🌍</div><h3>Филиалы</h3><p>Наші офіси в Європі.</p></a>
+</div>
+<a class="btn" href="{% url 'about' %}">Дізнатися більше</a>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block subtitle %}Офіс компанії в Парижі{% endblock %}
+{% block crumbs %}<div class="crumbs"><a href="{% url 'home' %}">Головна</a> › <a href="{% url 'contacts' %}">Контакти</a> › <span>Франція</span></div>{% endblock %}
+{% block content %}
+<img class="banner" src="{% static 'img/paris.svg' %}" alt="Франція">
+<div class="grid">
+    <div class="card"><div class="icon">📍</div><h3>Адреса</h3><p>Париж, вул. Ріволі, 25</p></div>
+    <div class="card"><div class="icon">📞</div><h3>Телефон</h3><p><a href="tel:+33100000000">+33 1 00 00 00 00</a></p></div>
+    <div class="card"><div class="icon">✉️</div><h3>Email</h3><p><a href="mailto:france@seawave.example">france@seawave.example</a></p></div>
+    <div class="card"><div class="icon">🕘</div><h3>Графік роботи</h3><p>Пн–Пт, 9:00–17:00</p></div>
+</div>
+<a class="btn" href="{% url 'contacts' %}">← Усі контакти</a>
+{% endblock %}

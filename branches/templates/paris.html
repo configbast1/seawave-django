@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block subtitle %}Центр дизайну та мобільної розробки{% endblock %}
+{% block crumbs %}<div class="crumbs"><a href="{% url 'home' %}">Головна</a> › <a href="{% url 'branches_list' %}">Филиалы</a> › <span>Париж</span></div>{% endblock %}
+{% block content %}
+<img class="banner" src="{% static 'img/paris.svg' %}" alt="Париж">
+<h2>Про філію</h2>
+<p>Філія в Парижі відкрилася у 2017 році. Тут працює команда дизайнерів і розробників мобільних застосунків.</p>
+<div class="stats">
+    <div class="stat"><b>2017</b>рік відкриття</div>
+    <div class="stat"><b>30</b>працівників</div>
+    <div class="stat"><b>80+</b>застосунків</div>
+</div>
+<a class="btn" href="{% url 'branches_list' %}">← Усі філії</a>
+{% endblock %}

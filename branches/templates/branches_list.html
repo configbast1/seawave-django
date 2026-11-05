@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block subtitle %}Наші офіси за кордоном{% endblock %}
+{% block content %}
+<p>Окрім головного офісу в Одесі, компанія має філії в Європі.</p>
+<div class="grid">
+    <a class="card" href="{% url 'london' %}"><img src="{% static 'img/london.svg' %}" alt="Лондон"><h3>🇬🇧 Лондон</h3><p>Працює з 2014 року. Робота з клієнтами Великої Британії.</p></a>
+    <a class="card" href="{% url 'paris' %}"><img src="{% static 'img/paris.svg' %}" alt="Париж"><h3>🇫🇷 Париж</h3><p>Працює з 2017 року. Дизайн та мобільна розробка.</p></a>
+</div>
+{% endblock %}

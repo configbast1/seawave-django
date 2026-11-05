@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block subtitle %}Хто ми і що для нас важливо{% endblock %}
+{% block content %}
+<h2>Наша місія</h2>
+<p>Ми допомагаємо бізнесу ставати сучаснішим за допомогою технологій. Наші програми прості, надійні та зручні для людей.</p>
+<p>За 18 років ми виконали понад 1200 проєктів для клієнтів з 25 країн: від невеликих інтернет-магазинів до великих банківських систем.</p>
+<h2>Наші цінності</h2>
+<div class="grid">
+    <div class="card"><div class="icon">🤝</div><h3>Чесність</h3><p>Відкрито говоримо з клієнтами та колегами.</p></div>
+    <div class="card"><div class="icon">🚀</div><h3>Розвиток</h3><p>Постійно вчимося і пробуємо нове.</p></div>
+    <div class="card"><div class="icon">⭐</div><h3>Якість</h3><p>Робимо так, щоб нам не було соромно.</p></div>
+</div>
+<h2>Що ми використовуємо</h2>
+<p>Python, Django, JavaScript, React, PostgreSQL, Docker, Kotlin, Swift.</p>
+<a class="btn" href="{% url 'history' %}">Наша історія</a>
+<a class="btn btn-light" href="{% url 'management' %}">Керівництво</a>
+{% endblock %}

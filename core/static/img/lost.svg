@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <circle cx="150" cy="100" r="95" fill="#e3f2fd"/>
+  <path d="M30 140 Q75 125 120 140 T210 140 T300 140 V170 Q150 210 30 170z" fill="#29b6f6"/>
+  <polygon points="110,128 190,128 178,142 122,142" fill="#0b1d3a"/>
+  <polygon points="148,128 148,70 180,124" fill="#ffffff" stroke="#0b1d3a" stroke-width="3"/>
+  <text x="150" y="58" text-anchor="middle" font-family="Segoe UI, Arial" font-size="44" font-weight="800" fill="#1565c0">?</text>
+</svg>
