@@ -349,6 +349,7 @@
     </main>
 
     <footer>
+        {% block footer %}
         <div class="links">
             <a href="{% url 'about' %}">Про компанію</a>
             <a href="{% url 'news' %}">Новини</a>
@@ -356,6 +357,7 @@
             <a href="{% url 'contacts' %}">Контакти</a>
         </div>
         © 2008–2026 SeaWave Software · Одеса · Лондон · Париж · Відень
+        {% endblock %}
     </footer>
 
 </body>

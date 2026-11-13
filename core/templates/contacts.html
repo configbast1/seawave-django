@@ -16,3 +16,9 @@
     <a class="card" href="{% url 'contacts_austria' %}"><img src="{% static 'img/vienna.svg' %}" alt="Відень"><h3>🇦🇹 Австрія</h3><p>Офіс у Відні</p></a>
 </div>
 {% endblock %}
+
+{# футер з base.html + додатковий рядок тільки на сторінці контактів #}
+{% block footer %}
+{{ block.super }}
+<div>Відповідаємо на листи протягом 24 годин</div>
+{% endblock %}

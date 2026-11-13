@@ -2,13 +2,20 @@
 {% load static %}
 {% block subtitle %}Що нового в нашій компанії{% endblock %}
 {% block content %}
+{% with items=news_block.items %}
+<h2>{{ news_block.heading }} ({{ items|length }})</h2>
+<p>Теми: {{ news_block.tags|join:", " }}</p>
 <div class="grid">
-    <div class="card"><div class="date">3 листопада 2026</div><h3>Новий офіс в Одесі</h3><p>Ми переїхали до сучасного офісу біля моря на 400 робочих місць.</p></div>
-    <div class="card"><div class="date">20 жовтня 2026</div><h3>Запуск SeaWave Cloud</h3><p>Представили власну хмарну платформу для малого бізнесу.</p></div>
-    <div class="card"><div class="date">1 жовтня 2026</div><h3>Безкоштовні курси</h3><p>Стартував набір студентів на курс Python та Django.</p></div>
-    <div class="card"><div class="date">15 вересня 2026</div><h3>Нагорода року</h3><p>Компанія увійшла до топ-10 IT-роботодавців України.</p></div>
-    <div class="card"><div class="date">2 вересня 2026</div><h3>Офіс у Відні</h3><p>Відкрили новий офіс в Австрії для клієнтів з Центральної Європи.</p></div>
-    <div class="card"><div class="date">10 серпня 2026</div><h3>Хакатон SeaWave</h3><p>120 учасників за 48 годин створили 30 робочих проєктів.</p></div>
+    {% for item in items %}
+    <div class="card">
+        <div class="date">{{ item.published|date:"j E Y" }}{% if item.is_important %} · ⭐ важливо{% endif %}</div>
+        <h3>{{ forloop.counter }}. {{ item.title }}</h3>
+        <p>{{ item.text|truncatewords:8 }}</p>
+    </div>
+    {% empty %}
+    <p>Новин поки немає.</p>
+    {% endfor %}
 </div>
+{% endwith %}
 <p>Хочете дізнатися більше? <a href="{% url 'contacts' %}">Напишіть нам</a>.</p>
 {% endblock %}

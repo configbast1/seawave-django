@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import resolve, Resolver404
+from .data import EMPLOYEES, NEWS
 
 SECTIONS = ['news', 'management', 'about', 'contacts', 'branches', 'history']
 
@@ -7,10 +8,28 @@ def home(request):
     return render(request, 'home.html', {'title': 'Головна'})
 
 def news(request):
-    return render(request, 'news.html', {'title': 'Новини'})
+    # складний словник: всередині ще словник і список об'єктів News
+    context = {
+        'title': 'Новини',
+        'news_block': {
+            'heading': 'Останні новини',
+            'items': NEWS,
+            'tags': ['офіс', 'хмара', 'навчання', 'нагороди'],
+        },
+    }
+    return render(request, 'news.html', context)
 
 def management(request):
-    return render(request, 'management.html', {'title': 'Керівництво компанії'})
+    context = {
+        'title': 'Керівництво компанії',
+        'company': {
+            'name': 'SeaWave Software',
+            'founded': 2008,
+            'experience': 80,
+            'employees': EMPLOYEES,  # список об'єктів Employee
+        },
+    }
+    return render(request, 'management.html', context)
 
 def about(request):
     return render(request, 'about.html', {'title': 'Про компанію'})

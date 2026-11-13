@@ -1,12 +1,25 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load my_filters %}
 {% block subtitle %}Люди, які ведуть компанію вперед{% endblock %}
 {% block content %}
-<p>Команда керівників SeaWave Software разом має понад 80 років досвіду в IT.</p>
+{% with people=company.employees %}
+<p>Команда керівників {{ company.name|upper }} — це {{ people|length }} людини, які разом мають понад {{ company.experience }} років досвіду в IT.</p>
 <div class="grid">
-    <div class="card"><div class="avatar">ОК</div><h3>Олександр Коваленко</h3><p>Генеральний директор, співзасновник компанії. Відповідає за стратегію розвитку.</p></div>
-    <div class="card"><div class="avatar">МШ</div><h3>Марина Шевченко</h3><p>Технічний директор. Керує командами розробників у всіх офісах.</p></div>
-    <div class="card"><div class="avatar">ДБ</div><h3>Дмитро Бондар</h3><p>Операційний директор, співзасновник компанії. Відповідає за роботу офісів.</p></div>
-    <div class="card"><div class="avatar">ІМ</div><h3>Ірина Мельник</h3><p>Директор з персоналу. Організовує навчання та набір нових працівників.</p></div>
+    {% for person in people %}
+    <div class="card">
+        <div class="avatar">{{ person.name|initials }}</div>
+        <h3>{{ person.name }}</h3>
+        {% if person.is_founder %}
+            <p><b>{{ person.position }}</b>, співзасновник компанії.</p>
+        {% else %}
+            <p><b>{{ person.position }}</b></p>
+        {% endif %}
+        <p>{{ person.description }}</p>
+        <p>📞 <a href="tel:+{{ person.phone }}">{{ person.phone|phone_format }}</a></p>
+    </div>
+    {% empty %}
+    <p>Інформація про керівництво поки відсутня.</p>
+    {% endfor %}
 </div>
+{% endwith %}
 {% endblock %}
